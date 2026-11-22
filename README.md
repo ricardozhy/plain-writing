@@ -42,6 +42,8 @@ The [worked examples](skills/plain-writing/references/examples.md) show a Chines
 
 The starting point was OpenAI's public *Using GPT-6.2* API guide. Its [Writing style](https://developers.openai.com/api/docs/guides/latest-model#writing-style) examples describe direct language and self-contained delivery. Its [Task completion](https://developers.openai.com/api/docs/guides/latest-model#task-completion) examples discuss finishing work and using reversible assumptions. This package applies those ideas through original instructions and examples for everyday and scholarly writing.
 
+Kxians grouped the four excerpts and added Chinese headings in the [original X post](https://x.com/xulijian1994/status/2122931496285798499).
+
 This release is named `plain-writing`. The first release remains available at [v1.0.0](https://github.com/ricardozhy/plain-writing/releases/tag/v1.0.0).
 
 ## License
