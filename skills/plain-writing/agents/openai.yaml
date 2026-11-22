@@ -1,4 +1,4 @@
 interface:
   display_name: "Plain Writing"
-  short_description: "Write natural everyday and academic prose"
-  default_prompt: "Use $plain-writing to revise this draft for its reader. Keep the original voice and the evidence that supports each claim."
+  short_description: "Install or remove OpenAI writing prompts in AGENTS.md"
+  default_prompt: "Use $plain-writing to install the official Writing style prompts in this project AGENTS.md."
