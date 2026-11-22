@@ -1,4 +1,0 @@
-interface:
-  display_name: "Plain Chinese Editor"
-  short_description: "Edit Chinese articles with source details intact"
-  default_prompt: "Use $plain-chinese-editor to turn these notes into a Chinese article for first-time readers. Keep the evidence and test conditions."

@@ -1,57 +1,49 @@
-# Plain Chinese Editor
+# Plain Writing
 
-An Agent Skill with English instructions for writing natural Chinese. It works on WeChat official account articles, notices, and technical explainers. Give it a draft or source notes and tell it who will read the result.
+An English-language Agent Skill for writing prose people can follow. Use it on everyday emails, messages, reports, or explanations, and on research papers, abstracts, results, and reviewer replies. It follows the language and register of your assignment.
 
 ## Install in Codex
 
-From your project directory, run the command below. The current Skills CLI requires Node.js 22.20.0 or later. This command installs a project copy under `.agents/skills/`.
+Run this in your project directory. The current Skills CLI requires Node.js 22.20.0 or later.
 
 ```sh
-npx skills add ricardozhy/plain-chinese-editor --skill plain-chinese-editor --agent codex --copy -y
+npx skills add ricardozhy/plain-writing --skill plain-writing --agent codex --copy -y
 ```
 
-Add `--global` to install for your user account. For a release-pinned installation, use `ricardozhy/plain-chinese-editor@v1.0.0` as the source.
+The command copies the skill into `.agents/skills/plain-writing/`. Add `--global` to install for your user account. Use `ricardozhy/plain-writing@v2.0.0` as the source to pin this release. If PowerShell blocks `npx.ps1`, run the same command with `npx.cmd`.
 
-If Windows PowerShell blocks `npx.ps1`, run the same command with `npx.cmd`.
+For manual installation, [download the repository](https://github.com/ricardozhy/plain-writing/archive/refs/heads/main.zip) and copy `skills/plain-writing` into your project's `.agents/skills/`. Keep the folder intact so the examples and picker configuration accompany `SKILL.md`. Open Codex in that project and select `$plain-writing`.
 
-To install manually, [download the repository](https://github.com/ricardozhy/plain-chinese-editor/archive/refs/heads/main.zip) and copy the entire `skills/plain-chinese-editor` directory into your project's `.agents/skills/` directory. The result should contain `.agents/skills/plain-chinese-editor/SKILL.md` and the accompanying `references/` directory. Use your home directory's `.agents/skills/` for a user-level installation. Open Codex in the project directory and use the skill picker. If you have an existing copy, update it in place so the picker shows one entry.
-
-[Skills CLI command reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) · [Codex skills documentation](https://developers.openai.com/codex/skills/)
+[Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md) · [Codex skills documentation](https://developers.openai.com/codex/skills/)
 
 ## Use it
 
-Start a Codex message with `$plain-chinese-editor` and paste your notes or draft. Specify the audience and any edits or facts that matter.
+Paste your source material after one of these prompts, or describe your own assignment.
 
 ```text
-$plain-chinese-editor 把下面的论文笔记写成公众号开头，读者第一次听说这项研究。保留型号、测试条件和出处。先写读者能理解的例子。
+$plain-writing 把下面的消息改成一封发给同事的短邮件。开头写清要他做什么、什么时候交。
 ```
 
 ```text
-$plain-chinese-editor 把下面的通知写给正准备出门的读者。把时间、地点和受影响的服务放在前面。
+$plain-writing Edit the following results paragraph for a machine learning paper. Lead with the measured outcome, keep the baseline and evaluation conditions, and preserve the citation keys.
 ```
 
-The English instructions guide the editing process. New drafts are in Chinese by default. For edits, the skill follows the source language and the requested tone.
-
-## How it edits
-
-| When you give it | What it does |
+| Material | What the skill looks for |
 | --- | --- |
-| Notes for a WeChat article | Opens with a specific event or result and builds the headline around a question the piece answers |
-| An operational notice | Surfaces the time, affected service, and action the reader can take |
-| Technical results or a paper | Explains terms in context and preserves metrics, model names, experimental conditions, and attribution |
-| A paragraph to polish | Keeps the author's voice and edits at the requested scale |
-| A source with a missing fact | Finishes the grounded draft and lists the exact missing fact for verification |
+| Message or email | The reader's next action, the owner, and the deadline |
+| Report or explanation | A result or decision with enough context to stand on its own |
+| Abstract or introduction | The research problem, the specific gap, and the best-supported contribution |
+| Methods or results | Technical terms, definitions, comparison, experimental conditions, and uncertainty |
+| Reviewer reply | A direct answer with the evidence or the location of the revision |
 
-**Before**
+The [worked examples](skills/plain-writing/references/examples.md) show a Chinese email, an English message with a missing detail, a results paragraph, and a reviewer reply.
 
-> 为进一步优化阅读环境，本馆将组织开展照明设施更换工作，届时部分区域暂停对外开放，敬请广大读者合理安排到馆时间。
+## Source and versions
 
-**After, using the source notes**
+The starting point was OpenAI's public *Using GPT-6.2* API guide. Its [Writing style](https://developers.openai.com/api/docs/guides/latest-model#writing-style) examples describe direct language and self-contained delivery. Its [Task completion](https://developers.openai.com/api/docs/guides/latest-model#task-completion) examples discuss finishing work and using reversible assumptions. This package applies those ideas through original instructions and examples for everyday and scholarly writing.
 
-> 12 月 5 日 14:00–16:00，图书馆二楼阅览室换灯，暂停开放。只来还书的话，一楼还书台照常开放。
-
-See [worked examples](skills/plain-chinese-editor/references/examples.md) for a paper explainer and a draft with a missing date. The repository contains instructions, examples, and Codex picker metadata. Once installed, the skill uses your existing agent.
+This release is named `plain-writing`. The first release remains available at [v1.0.0](https://github.com/ricardozhy/plain-writing/releases/tag/v1.0.0).
 
 ## License
 
-[MIT](LICENSE) · Maintained by 西方魔蚊
+[MIT](LICENSE) · Maintained by ricardozhy
